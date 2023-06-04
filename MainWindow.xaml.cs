@@ -49,34 +49,11 @@ namespace HeavenClicker
             UpdateMainCounters();
         }
 
-        private void BuyWeapon(object sender, RoutedEventArgs e)
+        private void BuyItem(object sender, RoutedEventArgs e)
         {
-            if(Variables.Money >= Variables.WeaponMoneyPrice && Variables.Info >= Variables.WeaponInfoPrice)
-            {
-                Variables.Money -= Variables.WeaponMoneyPrice;
-                Variables.Info -= Variables.WeaponInfoPrice;
+            var currentButton = sender as Button;
 
-                Variables.Weapons++;
-
-                UpdateMainCounters();
-                UpdateSecondaryCounters();
-
-                StatusTextBox.Text = "Ты купил пушку!";
-            }
-            else
-            {
-                StatusTextBox.Text = "Недостаточно ресурсов";
-            }
-        }
-
-        private void BuyCar(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BuyPeople(object sender, RoutedEventArgs e)
-        {
-
+            InventoryObject currentObject = new(currentButton.Content)
         }
     }
 }
