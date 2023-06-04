@@ -20,9 +20,16 @@ namespace HeavenClicker
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int i = 0;
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainCounterTextBox.Text = Convert.ToString(++i);
         }
     }
 }
