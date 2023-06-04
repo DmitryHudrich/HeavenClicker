@@ -9,12 +9,18 @@ namespace HeavenClicker
     internal class InventoryObject
     {
         readonly public string Name;
-        public int MoneyCount = 0;
-        public double Price;
-        readonly public double PriceMultiplier;
+        public int Count = 0;
+        public double MoneyPrice { get; set; } = 0;
+        public double InfoPrice = 0;
+        public double IdeologyPrice = 0;
+
+        public double MoneyPriceMultiplier = 0;
+        public double InfoPriceMultiplier = 0;
+        public double IdeologyPriceMultiplier  = 0 ;
+
         public static int ObjectCount = 0;
 
-        public InventoryObject(string name, double price, double priceMultiplier){
+        public InventoryObject(string name){
             Name = name;
         }
     }

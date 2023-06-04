@@ -20,6 +20,30 @@ namespace HeavenClicker
     /// </summary>
     public partial class MainWindow : Window
     {
+        InventoryObject weapon = new InventoryObject("weapon")
+        {
+            MoneyPrice = 5,
+            InfoPrice = 5,
+            MoneyPriceMultiplier = 1.2,
+            InfoPriceMultiplier = 1.5
+        };
+
+        InventoryObject car = new InventoryObject("car")
+        {
+            MoneyPrice = 5,
+            InfoPrice = 5,
+            MoneyPriceMultiplier = 1.2,
+            InfoPriceMultiplier = 1.5
+        };
+
+        InventoryObject people = new InventoryObject("people")
+        {
+            MoneyPrice = 5,
+            InfoPrice = 5,
+            MoneyPriceMultiplier = 1.2,
+            InfoPriceMultiplier = 1.5
+        };
+
 
         public void UpdateMainCounters()
         {
@@ -51,9 +75,12 @@ namespace HeavenClicker
 
         private void BuyItem(object sender, RoutedEventArgs e)
         {
-            var currentButton = sender as Button;
+            var button = sender as Button;
+            string objName = button.Tag as string;
 
-            InventoryObject currentObject = new(currentButton.Content)
+
+            
+
         }
     }
 }
