@@ -20,8 +20,9 @@ namespace HeavenClicker
     /// </summary>
     public partial class MainWindow : Window
     {
+        private bool _isItemsMenuOpen = false;
+        private bool _isActionsMenuOpen = false;
 
-        
         public void UpdateMainCounters()
         {
             MoneyCounterTextBox.Text = "Деньги: " + Math.Round(Variables.Money, 2);
@@ -176,6 +177,44 @@ namespace HeavenClicker
             else
             {
                 StatusTextBox.Text = "Недостаточно ресурсов!";
+            }
+        }
+
+        private void OpenItemsMenuButton(object sender, RoutedEventArgs e)
+        {
+            if (_isItemsMenuOpen)
+            {
+                GridLength gridLengthValue = (GridLength)new GridLengthConverter().ConvertFrom("0".ToString());
+
+                ItemsGridSection.Width = gridLengthValue;
+                _isItemsMenuOpen = false;
+            }
+
+            else
+            {
+                GridLength gridLengthValue = (GridLength)new GridLengthConverter().ConvertFrom("1*".ToString());
+
+                ItemsGridSection.Width = gridLengthValue;
+                _isItemsMenuOpen = true;
+            }
+        }
+
+        private void OpenActionsMenuButton(object sender, RoutedEventArgs e)
+        {
+            if (_isActionsMenuOpen)
+            {
+                GridLength gridLengthValue = (GridLength)new GridLengthConverter().ConvertFrom("0".ToString());
+
+                ActionsGridSection.Width = gridLengthValue;
+                _isActionsMenuOpen = false;
+            }
+
+            else
+            {
+                GridLength gridLengthValue = (GridLength)new GridLengthConverter().ConvertFrom("1*".ToString());
+
+                ActionsGridSection.Width = gridLengthValue;
+                _isActionsMenuOpen = true;
             }
         }
     }
