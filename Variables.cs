@@ -8,7 +8,9 @@ namespace HeavenClicker
 {
     internal class Variables
     {
-        public static Random rnd = new Random();
+        public static Random rnd = new();
+
+        public bool buyCheck = false;
 
         //количество имеющихся у игрока ресурсов
         public static double Money { get; set; } = 0;
@@ -26,37 +28,28 @@ namespace HeavenClicker
         public static double IdeologyBonus { get; set; } = 0;
 
         //количество имеющихся у игрока консюмаблов
-        public static double Weapons { get; set; } = 0;
-        public static double Bombs { get; set; } = 0;
-        public static double People { get; set; } = 0;
+        public static int Weapons { get; set; } = 0;
+        public static int Cars { get; set; } = 0;
+        public static int People { get; set; } = 0;
 
         //цены на консюмаблы
-        public static double WeaponMoneyPrice { get; set; } = 0;
+        public static double WeaponMoneyPrice { get; set; } = 5;
+        public static double WeaponInfoPrice { get; set; } = 5;
         public static double CarMoneyPrice { get; set; } = 0;
-        public static double PeopleMoneyPrice { get; set; } = 0;
-
-        public static double WeaponInfoPrice { get; set; } = 0;
         public static double CarInfoPrice { get; set; } = 0;
-        public static double PeopleInfoPrice { get; set; } = 0;
-
-        public static double WeaponIdeologyPrice { get; set; } = 0;
         public static double CarIdeologyPrice { get; set; } = 0;
+        public static double PeopleMoneyPrice { get; set; } = 0;
+        public static double PeopleInfoPrice { get; set; } = 0;
         public static double PeopleIdeologyPrice { get; set; } = 0;
 
         //умножители цен на консюмаблы
         public static double WeaponMoneyPriceMultiplier { get; set; } = 0;
-        public static double CarMoneyPriceMultiplier { get; set; } = 0;
-        public static double PeopleMoneyPriceMultiplier { get; set; } = 0;
-
         public static double WeaponInfoPriceMultiplier { get; set; } = 0;
+        public static double CarMoneyPriceMultiplier { get; set; } = 0;
         public static double CarInfoPriceMultiplier { get; set; } = 0;
-        public static double PeopleInfoPriceMultiplier { get; set; } = 0;
-
-        public static double WeaponIdeologyPriceMultiplier { get; set; } = 0;
         public static double CarIdeologyPriceMultiplier { get; set; } = 0;
+        public static double PeopleMoneyPriceMultiplier { get; set; } = 0;
+        public static double PeopleInfoPriceMultiplier { get; set; } = 0;
         public static double PeopleIdeologyPriceMultiplier { get; set; } = 0;
-
-
-
     }
 }

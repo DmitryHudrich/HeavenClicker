@@ -19,10 +19,19 @@ namespace DimaClicker
         public static readonly DependencyProperty ClickForceProperty =
         DependencyProperty.Register("ClickForce", typeof(int), typeof(UpgradeButton));
 
+        public static readonly DependencyProperty ObjectNameProperty =
+        DependencyProperty.Register("ObjectName", typeof(string), typeof(UpgradeButton));
+
         public int UpgradePrice
         {
             get { return (int)GetValue(UpgradePriceProperty); }
             set { SetValue(UpgradePriceProperty, value); }
+        }
+
+        public int ObjectName
+        {
+            get { return (int)GetValue(ObjectNameProperty); }
+            set { SetValue(ObjectNameProperty, value); }
         }
 
         public int ClickPower
