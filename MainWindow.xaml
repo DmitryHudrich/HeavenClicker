@@ -9,6 +9,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -29,14 +30,6 @@
             <Button.Content>
                 <Image Source="{svgc:SvgImage Source=assets/icons/ClickButtonIcon.svg}"/>
             </Button.Content>
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border Background="LightBlue" CornerRadius="10">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-
         </Button>
 
         <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Text="30" BorderThickness="0" FontWeight="Bold" FontSize="40" Grid.Column="0" Grid.Row="3"/>
