@@ -23,7 +23,9 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="MainClickButtonBorder" Property="Background" Value="#80add8e6" />
+                                <Setter Property="Background" Value="#80add8e6" />
+                                <Setter TargetName="ButtonContent" Property="Width" Value="50"/>
+                                <Setter TargetName="ButtonContent" Property="Height" Value="50"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>

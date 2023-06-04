@@ -25,13 +25,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="Бля я не знаю" FontSize="50" FontWeight="Black" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"/>
-
-        <Button Width="Auto" Height="Auto" Margin="10" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Click="Button_Click">
-            <Button.Content>
-                <Image Source="{svgc:SvgImage Source=assets/icons/ClickButtonIcon.svg}"/>
-            </Button.Content>
-        </Button>
-
+        <Button Width="Auto" Height="Auto" Margin="10" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Click="Button_Click"/>
         <TextBox x:Name="MainCounterTextBox" HorizontalAlignment="Center" VerticalAlignment="Center" Text="0" BorderThickness="0" FontWeight="Bold" FontSize="40" Grid.Column="0" Grid.Row="3"/>
     </Grid>
 </Window>
