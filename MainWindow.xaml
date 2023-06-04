@@ -53,7 +53,9 @@
         <TextBlock Text="Статус" Margin="0,156,0,0" Grid.Column="2" Grid.Row="2" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Top" Height="32" Grid.RowSpan="2" Width="70"/>
         <TextBox x:Name="StatusTextBox" Text="нихуя не происходит" Grid.Column="2" Margin="0,43,0,42" Grid.Row="3" Background="White" BorderBrush="White" Width="140" HorizontalAlignment="Center"/>
 
-        <StackPanel HorizontalAlignment="Left" Height="186" Margin="16,40,0,0" Grid.Row="3" VerticalAlignment="Top" Width="242" Grid.ColumnSpan="2" Grid.RowSpan="2">
+        <StackPanel HorizontalAlignment="Left" Height="186" Margin="10" Grid.Row="3" VerticalAlignment="Top" Width="242" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <TextBlock Text="Имеется: " FontSize="30" FontWeight="DemiBold" />
+
             <TextBox x:Name="MoneyCounterTextBox" Text="Деньги: 0" BorderThickness="0" FontSize="20" Width="240" HorizontalAlignment="Left"/>
             <TextBox x:Name="InfoCounterTextBox" Text="Информация: 0" BorderThickness="0" FontSize="20" Width="239" HorizontalAlignment="Left"/>
             <TextBox x:Name="IdeologyCounterTextBox" Text="Идеология: 0" BorderThickness="0" FontSize="20" Width="240" HorizontalAlignment="Left"/>
