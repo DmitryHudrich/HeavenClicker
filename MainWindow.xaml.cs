@@ -20,6 +20,30 @@ namespace HeavenClicker
     /// </summary>
     public partial class MainWindow : Window
     {
+        InventoryObject weapon = new InventoryObject("weapon")
+        {
+            MoneyPrice = 5,
+            InfoPrice = 5,
+            MoneyPriceMultiplier = 1.2,
+            InfoPriceMultiplier = 1.5
+        };
+
+        InventoryObject car = new InventoryObject("car")
+        {
+            MoneyPrice = 5,
+            InfoPrice = 5,
+            MoneyPriceMultiplier = 1.2,
+            InfoPriceMultiplier = 1.5
+        };
+
+        InventoryObject people = new InventoryObject("people")
+        {
+            MoneyPrice = 5,
+            InfoPrice = 5,
+            MoneyPriceMultiplier = 1.2,
+            InfoPriceMultiplier = 1.5
+        };
+
 
         public void UpdateMainCounters()
         {
@@ -49,33 +73,13 @@ namespace HeavenClicker
             UpdateMainCounters();
         }
 
-        private void BuyWeapon(object sender, RoutedEventArgs e)
+        private void BuyItem(object sender, RoutedEventArgs e)
         {
-            if(Variables.Money >= Variables.WeaponMoneyPrice && Variables.Info >= Variables.WeaponInfoPrice)
-            {
-                Variables.Money -= Variables.WeaponMoneyPrice;
-                Variables.Info -= Variables.WeaponInfoPrice;
+            var button = sender as Button;
+            string objName = button.Tag as string;
 
-                Variables.Weapons++;
 
-                UpdateMainCounters();
-                UpdateSecondaryCounters();
-
-                StatusTextBox.Text = "Ты купил пушку!";
-            }
-            else
-            {
-                StatusTextBox.Text = "Недостаточно ресурсов";
-            }
-        }
-
-        private void BuyCar(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BuyPeople(object sender, RoutedEventArgs e)
-        {
+            
 
         }
     }

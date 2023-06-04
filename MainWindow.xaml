@@ -43,14 +43,14 @@
 
         <StackPanel Grid.Column="4" Margin="0,10,0,0" Grid.RowSpan="4">
             <TextBlock x:Name="___Без_имени_" TextWrapping="Wrap" Text="Предметы" FontSize="20" HorizontalAlignment="Center"/>
-            <Button Content="Оружие" Height="35" Width="138" Click="BuyWeapon"/>
+            <Button Content="Оружие" Height="35" Width="138" Click="BuyItem" Tag="weapon"/>
             <TextBox TextWrapping="Wrap" Text="Деньги: 5" Width="120"/>
             <TextBox TextWrapping="Wrap" Text="Информация: 5" Width="120"/>
-            <Button Content="Машина" Height="35" Width="138" Click="BuyCar"/>
+            <Button Content="Машина" Height="35" Width="138" Click="BuyItem"/>
             <TextBox TextWrapping="Wrap" Text="Деньги: 10" Width="120"/>
             <TextBox TextWrapping="Wrap" Text="Информация: 2" Width="120"/>
             <TextBox TextWrapping="Wrap" Text="Идеология: 1" Width="120"/>
-            <Button Content="Люди" Height="35" Width="138" Click="BuyPeople"/>
+            <Button Content="Люди" Height="35" Width="138" Click="BuyItem"/>
             <TextBox TextWrapping="Wrap" Text="Деньги: 5" Width="120"/>
             <TextBox TextWrapping="Wrap" Text="Информация: 10" Width="120"/>
             <TextBox TextWrapping="Wrap" Text="Идеология: 1" Width="120"/>
