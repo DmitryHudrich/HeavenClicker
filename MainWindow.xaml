@@ -9,13 +9,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="31*"/>
+            <ColumnDefinition Width="129*"/>
+            <ColumnDefinition Width="160*"/>
+            <ColumnDefinition Width="160*"/>
+            <ColumnDefinition Width="160*"/>
+            <ColumnDefinition Width="160*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -24,14 +25,65 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Бля я не знаю" FontSize="50" FontWeight="Black" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"/>
+        <TextBlock Text="Бля я не знаю" FontSize="50" FontWeight="Black" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Margin="0,0,0,108" Grid.RowSpan="2"/>
 
-        <Button Width="Auto" Height="Auto" Margin="10" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Click="Button_Click">
+        <Button Width="Auto" Height="Auto" Margin="10,10,10,10" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Click="MainButtonClick" Grid.ColumnSpan="2">
             <Button.Content>
                 <Image Source="{svgc:SvgImage Source=assets/icons/ClickButtonIcon.svg}"/>
             </Button.Content>
         </Button>
 
-        <TextBox x:Name="MainCounterTextBox" HorizontalAlignment="Center" VerticalAlignment="Center" Text="0" BorderThickness="0" FontWeight="Bold" FontSize="40" Grid.Column="0" Grid.Row="3"/>
+        <TextBlock Text="Статус" Margin="0,0,0,10" Grid.Column="3" Grid.Row="3" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="StatusTextBox" Text="нихуя не происходит" Grid.Column="3" Margin="0,40,0,45" Grid.Row="3" HorizontalAlignment="Center" Background="White" BorderBrush="White"/>
+        
+        <StackPanel HorizontalAlignment="Left" Height="97" Margin="16,0,0,0" Grid.Row="3" VerticalAlignment="Top" Width="242" Grid.ColumnSpan="3">
+            <TextBox x:Name="MoneyCounterTextBox" Text="Деньги: 0" BorderThickness="0" FontSize="20" Width="240" HorizontalAlignment="Left"/>
+            <TextBox x:Name="InfoCounterTextBox" Text="Информация: 0" BorderThickness="0" FontSize="20" Width="239" HorizontalAlignment="Left"/>
+            <TextBox x:Name="IdeologyCounterTextBox" Text="Идеология: 0" BorderThickness="0" FontSize="20" Width="240" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StackPanel Grid.Column="4" Margin="0,10,0,0" Grid.RowSpan="4">
+
+            <StackPanel
+    Grid.RowSpan="4" Margin="0,10,0,0" Grid.Column="5">
+                <TextBlock TextWrapping="Wrap" Text="Действия" FontSize="20" HorizontalAlignment="Center"/>
+                <Button
+    Content="Button" Height="35" Width="138"/>
+                <TextBox
+    TextWrapping="Wrap" Text="TextBox" Width="120"/>
+                <TextBox
+    TextWrapping="Wrap" Text="TextBox" Width="120"/>
+                <TextBox
+    TextWrapping="Wrap" Text="TextBox" Width="120"/>
+                <Button
+    Content="Button" Height="35" Width="138"/>
+                <TextBox
+    TextWrapping="Wrap" Text="TextBox" Width="120"/>
+                <TextBox
+    TextWrapping="Wrap" Text="TextBox" Width="120"/>
+                <TextBox
+    TextWrapping="Wrap" Text="TextBox" Width="120"/>
+                <Button
+    Content="Button" Height="35" Width="138"/>
+                <TextBox
+    TextWrapping="Wrap" Text="TextBox" Width="120"/>
+                <TextBox
+    TextWrapping="Wrap" Text="TextBox" Width="120"/>
+                <TextBox
+    TextWrapping="Wrap" Text="TextBox" Width="120"/>
+            </StackPanel>
+            <TextBlock x:Name="___Без_имени_" TextWrapping="Wrap" Text="Предметы" FontSize="20" HorizontalAlignment="Center"/>
+            <Button Content="Оружие" Height="35" Width="138"/>
+            <TextBox TextWrapping="Wrap" Text="Деньги: 10" Width="120"/>
+            <TextBox TextWrapping="Wrap" Text="TextBox" Width="120"/>
+            <TextBox TextWrapping="Wrap" Text="TextBox" Width="120"/>
+            <Button Content="Люди" Height="35" Width="138"/>
+            <TextBox TextWrapping="Wrap" Text="TextBox" Width="120"/>
+            <TextBox TextWrapping="Wrap" Text="TextBox" Width="120"/>
+            <TextBox TextWrapping="Wrap" Text="TextBox" Width="120"/>
+            <Button Content="Машина" Height="35" Width="138"/>
+            <TextBox TextWrapping="Wrap" Text="TextBox" Width="120"/>
+            <TextBox TextWrapping="Wrap" Text="TextBox" Width="120"/>
+            <TextBox TextWrapping="Wrap" Text="TextBox" Width="120"/>
+        </StackPanel>
     </Grid>
 </Window>

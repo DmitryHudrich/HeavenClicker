@@ -27,9 +27,17 @@ namespace HeavenClicker
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void MainButtonClick(object sender, RoutedEventArgs e)
         {
-            MainCounterTextBox.Text = Convert.ToString(++i);
+            Variables.Money += Variables.MoneyBase + Variables.rnd.NextDouble() * Variables.MoneyBonus;
+            Variables.Info += Variables.InfoBase + Variables.rnd.NextDouble() * Variables.InfoBonus;
+            Variables.Ideology += Variables.IdeologyBase + Variables.rnd.NextDouble() * Variables.IdeologyBonus;
+            
+            MoneyCounterTextBox.Text = "Money: " + Math.Round(Variables.Money, 2);
+            InfoCounterTextBox.Text = "Info: " + Math.Round(Variables.Info, 2);
+            IdeologyCounterTextBox.Text = "Ideology: " + Math.Round(Variables.Ideology, 2);
         }
+
+
     }
 }
