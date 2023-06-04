@@ -99,7 +99,7 @@
             </StackPanel>
         </ScrollViewer>
 
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="4" Grid.ColumnSpan="4" Margin="10,10,7,10">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="4" Grid.ColumnSpan="5" Margin="10,10,7,10">
             <ScrollViewer.Resources>
                 <Style TargetType="TextBox">
                     <Setter Property="BorderThickness" Value="0"/>
