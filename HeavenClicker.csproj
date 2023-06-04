@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="sfx\" />
+    <PackageReference Include="SharpVectors" Version="1.8.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="SharpVectors.Reloaded" Version="1.8.1" />
-  </ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /E /Y /I &quot;$(ProjectDir)assets&quot; &quot;$(TargetDir)assets&quot;" />
+  </Target>
 
 </Project>
