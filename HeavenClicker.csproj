@@ -11,6 +11,14 @@
     <PackageReference Include="SharpVectors" Version="1.8.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="src\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="App.xaml" />
+  </ItemGroup>
+
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="xcopy /E /Y /I &quot;$(ProjectDir)assets&quot; &quot;$(TargetDir)assets&quot;" />
   </Target>

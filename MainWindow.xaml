@@ -27,7 +27,7 @@
 
         <TextBlock Text="0xXxИm1r0n" FontSize="50" FontWeight="Black" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Margin="0,0,0,108" Grid.RowSpan="2"/>
 
-        <Button Width="Auto" Height="Auto" Margin="10,10,10,10" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Click="MainButtonClick" Grid.ColumnSpan="2" Content="кликни на меня сладенький"/>
+        <Button Width="Auto" Height="Auto" Margin="10,10,10,10" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Content="кликни на меня сладенький"/>
 
         <Grid Grid.Row="0" Grid.Column="2">
             <Grid.RowDefinitions>
@@ -43,8 +43,8 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Button Grid.Row="0" Content="Предметы" Margin="3" Click="OpenItemsMenuButton"/>
-                <Button Grid.Row="1" Content="Действия" Margin="3" Click="OpenActionsMenuButton"/>
+                <Button Grid.Row="0" Content="Предметы" Margin="3"/>
+                <Button Grid.Row="1" Content="Действия" Margin="3"/>
             </Grid>
             
 
@@ -65,14 +65,14 @@
         <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="3" Grid.RowSpan="3">
             <StackPanel Margin="0,10,0,0">
                 <TextBlock TextWrapping="Wrap" Text="Предметы" FontSize="20" HorizontalAlignment="Center"/>
-                <Button Content="Оружие" Height="35" Width="138" Click="BuyItem" Tag="weapon"/>
+                <Button Content="Оружие" Height="35" Width="138" Tag="weapon"/>
                 <TextBox x:Name="WeaponMoneyPriceCounter" TextWrapping="Wrap" Text="Деньги: 5" Width="120"/>
                 <TextBox x:Name="WeaponInfoPriceCounter" TextWrapping="Wrap" Text="Информация: 5" Width="120"/>
-                <Button Content="Машина" Height="35" Width="138" Click="BuyItem" Tag="car"/>
+                <Button Content="Машина" Height="35" Width="138" Tag="car"/>
                 <TextBox x:Name="CarMoneyPriceCounter" TextWrapping="Wrap" Text="Деньги: 10" Width="120"/>
                 <TextBox x:Name="CarInfoPriceCounter" TextWrapping="Wrap" Text="Информация: 2" Width="120"/>
                 <TextBox x:Name="CarIdeologyPriceCounter" TextWrapping="Wrap" Text="Идеология: 1" Width="120"/>
-                <Button Content="Люди" Height="35" Width="138" Click="BuyItem" Tag="people"/>
+                <Button Content="Люди" Height="35" Width="138" Tag="people"/>
                 <TextBox x:Name="PeopleMoneyPriceCounter" TextWrapping="Wrap" Text="Деньги: 5" Width="120"/>
                 <TextBox x:Name="PeopleInfoPriceCounter" TextWrapping="Wrap" Text="Информация: 10" Width="120"/>
                 <TextBox x:Name="PeopleIdeologyPriceCounter" TextWrapping="Wrap" Text="Идеология: 1" Width="120"/>
@@ -82,16 +82,16 @@
         <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="4" Grid.RowSpan="3">
             <StackPanel Margin="0,10,0,0" >
                 <TextBlock TextWrapping="Wrap" Text="Действия" FontSize="20" HorizontalAlignment="Center"/>
-                <Button Content="Вооруженное &#xD;&#xA;ограбление" Click="BuyAction" Height="35" Width="138" Tag="pillage"/>
+                <Button Content="Вооруженное &#xD;&#xA;ограбление" Height="35" Width="138" Tag="pillage"/>
                 <TextBox x:Name="PillageWeaponPriceCounter" TextWrapping="Wrap" Text="TextBox" Width="120"/>
                 <TextBox x:Name="PillagePeoplePriceCounter" TextWrapping="Wrap" Text="TextBox" Width="120"/>
                 <TextBox x:Name="PillageChanceCounter" TextWrapping="Wrap" Text="TextBox" Width="120"/>
-                <Button Content="Массовое&#xD;&#xA;убийство" Click="BuyAction" Height="35" Width="138" Tag="massMurder"/>
+                <Button Content="Массовое&#xD;&#xA;убийство" Height="35" Width="138" Tag="massMurder"/>
                 <TextBox x:Name="MassMurderWeaponPriceCounter" TextWrapping="Wrap" Text="TextBox" Width="120"/>
                 <TextBox x:Name="MassMurderCarPriceCounter" TextWrapping="Wrap" Text="TextBox" Width="120"/>
                 <TextBox x:Name="MassMurderPeoplePriceCounter" TextWrapping="Wrap" Text="Tex" Width="120"/>
                 <TextBox x:Name="MassMurderChanceCounter" TextWrapping="Wrap" Text="TextBox" Width="120"/>
-                <Button Content="Взрыв&#xD;&#xA;в школе" Click="BuyAction" Height="35" Width="138" Tag="explosion"/>
+                <Button Content="Взрыв&#xD;&#xA;в школе" Height="35" Width="138" Tag="explosion"/>
                 <TextBox x:Name="ExplosionWeaponPriceCounter" TextWrapping="Wrap" Text="Textox" Width="120"/>
                 <TextBox x:Name="ExplosionCarPriceCounter" TextWrapping="Wrap" Text="TextBox" Width="120"/>
                 <TextBox x:Name="ExplosionPeoplePriceCounter" TextWrapping="Wrap" Text="TextBox" Width="120"/>
