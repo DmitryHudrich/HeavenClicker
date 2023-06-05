@@ -64,7 +64,13 @@
         <Button Content="Вконтакте" Grid.Column="2"/>
 
         <Button Content="Статистика" Grid.Column="8"/>
-        <Button Content="Настройки" Grid.Column="9"/>
+        <Button Grid.Column="9">
+            <Image Source="{svgc:SvgImage Source=assets/icons/OptionsButtonIcon.svg}" Stretch="None">
+                <Image.RenderTransform>
+                    <ScaleTransform ScaleX="0.7" ScaleY="0.7" />
+                </Image.RenderTransform>
+            </Image>
+        </Button>
         
         <!--Название организации-->
         <TextBox x:Name="AgencyNameTextBlock"
