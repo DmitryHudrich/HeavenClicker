@@ -65,7 +65,7 @@
 
         <Button Content="Статистика" Grid.Column="8"/>
         <Button Grid.Column="9">
-            <Image Source="{svgc:SvgImage Source=assets/icons/OptionsButtonIcon.svg}" Stretch="None">
+            <Image Source="{svgc:SvgImage Source=assets/icons/OptionsButtonIcon.svg}">
                 <Image.RenderTransform>
                     <ScaleTransform ScaleX="0.7" ScaleY="0.7" />
                 </Image.RenderTransform>
