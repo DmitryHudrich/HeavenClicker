@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using HeavenClicker.ViewModels;
 
 namespace HeavenClicker
 {
@@ -13,6 +14,5 @@ namespace HeavenClicker
     /// </summary>
     public partial class App : Application
     {
-
     }
 }

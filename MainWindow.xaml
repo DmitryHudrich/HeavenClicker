@@ -5,17 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:svg="http://sharpvectors.codeplex.com/svgc/2008/xaml"
         xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
-        xmlns:local="clr-namespace:HeavenClicker"
+        xmlns:local="clr-namespace:HeavenClicker.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="800">
+        Title="MainWindow" Height="400" Width="800" Background="#FF444444">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#363636" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#000000" Direction="320" ShadowDepth="2" BlurRadius="5" Opacity="0.8" />
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="15">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#242424" />
+                                <Setter Property="Effect" Value="{x:Null}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition x:Name="ItemsGridSection" Width="1*"/>
-            <ColumnDefinition x:Name="ActionsGridSection" Width="1*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -23,96 +55,62 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
+        
+        <!--блок всяких кнопок с хуйней (ну там гитхаб телега хуй знает)-->
+        <Button Content="Гитхаб" Grid.Column="0"/>
+        <Button Content="Телеграм" Grid.Column="1"/>
+        <Button Content="Вконтакте" Grid.Column="2"/>
 
-        <TextBlock Text="0xXxИm1r0n" FontSize="50" FontWeight="Black" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Margin="0,0,0,108" Grid.RowSpan="2"/>
+        <Button Content="Статистика" Grid.Column="8"/>
+        <Button Content="Настройки" Grid.Column="9"/>
+        
+        <!--Название организации-->
+        <TextBox x:Name="AgencyNameTextBlock"
+                 FontWeight="Black" FontSize="50" 
+                 Text="0xXx1m1r0n" 
+                 Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5"
+                 BorderThickness="0" 
+                 Background="{x:Null}" Foreground="White"/>
 
-        <Button Width="Auto" Height="Auto" Margin="10,10,10,10" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Content="кликни на меня сладенький"/>
-
-        <Grid Grid.Row="0" Grid.Column="2">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+        <Button x:Name="MainClickButton"
+                Grid.Column="0" Grid.Row="2"
+                Grid.ColumnSpan="2" Grid.RowSpan="3"/>
+        
+        <!--Статы под кнопкой-->
+        <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="5">
+            <Grid.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="FontSize" Value="13"/>
+                    <Setter Property="FontWeight" Value="DemiBold"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </Style>
+            </Grid.Resources>
+            
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="3*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Button Grid.Row="0" Content="Предметы" Margin="3"/>
-                <Button Grid.Row="1" Content="Действия" Margin="3"/>
-            </Grid>
             
-
+            <!--Названия статов типа деньги инфа тут написано снизу-->
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="Деньги:"/>
+                <TextBlock Text="Инфа:"/>
+                <TextBlock Text="Идеология:"/>
+            </StackPanel>
+            
+            <!--А это их значения которые меняться будут-->
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="0" HorizontalAlignment="Right"/>
+                <TextBlock Text="0" HorizontalAlignment="Right"/>
+                <TextBlock Text="0" HorizontalAlignment="Right"/>
+            </StackPanel>
         </Grid>
 
-        <TextBlock Text="Статус" Margin="0,156,0,0" Grid.Column="2" Grid.Row="2" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Top" Height="32" Grid.RowSpan="2" Width="70"/>
-        <TextBox x:Name="StatusTextBox" Text="нихуя не происходит" Grid.Column="2" Margin="0,43,0,42" Grid.Row="3" Background="White" BorderBrush="White" Width="140" HorizontalAlignment="Center"/>
-
-        <StackPanel HorizontalAlignment="Left" Height="186" Margin="10" Grid.Row="3" VerticalAlignment="Top" Width="242" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <TextBlock Text="Имеется: " FontSize="30" FontWeight="DemiBold" />
-
-            <TextBox x:Name="MoneyCounterTextBox" Text="Деньги: 0" BorderThickness="0" FontSize="20" Width="240" HorizontalAlignment="Left"/>
-            <TextBox x:Name="InfoCounterTextBox" Text="Информация: 0" BorderThickness="0" FontSize="20" Width="239" HorizontalAlignment="Left"/>
-            <TextBox x:Name="IdeologyCounterTextBox" Text="Идеология: 0" BorderThickness="0" FontSize="20" Width="240" HorizontalAlignment="Left"/>
-
-        </StackPanel>
-
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="3" Grid.RowSpan="3">
-            <StackPanel Margin="0,10,0,0">
-                <TextBlock TextWrapping="Wrap" Text="Предметы" FontSize="20" HorizontalAlignment="Center"/>
-                <Button Content="Оружие" Height="35" Width="138" Tag="weapon"/>
-                <TextBox x:Name="WeaponMoneyPriceCounter" TextWrapping="Wrap" Text="Деньги: 5" Width="120"/>
-                <TextBox x:Name="WeaponInfoPriceCounter" TextWrapping="Wrap" Text="Информация: 5" Width="120"/>
-                <Button Content="Машина" Height="35" Width="138" Tag="car"/>
-                <TextBox x:Name="CarMoneyPriceCounter" TextWrapping="Wrap" Text="Деньги: 10" Width="120"/>
-                <TextBox x:Name="CarInfoPriceCounter" TextWrapping="Wrap" Text="Информация: 2" Width="120"/>
-                <TextBox x:Name="CarIdeologyPriceCounter" TextWrapping="Wrap" Text="Идеология: 1" Width="120"/>
-                <Button Content="Люди" Height="35" Width="138" Tag="people"/>
-                <TextBox x:Name="PeopleMoneyPriceCounter" TextWrapping="Wrap" Text="Деньги: 5" Width="120"/>
-                <TextBox x:Name="PeopleInfoPriceCounter" TextWrapping="Wrap" Text="Информация: 10" Width="120"/>
-                <TextBox x:Name="PeopleIdeologyPriceCounter" TextWrapping="Wrap" Text="Идеология: 1" Width="120"/>
-            </StackPanel>
-        </ScrollViewer>
-
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="4" Grid.RowSpan="3">
-            <StackPanel Margin="0,10,0,0" >
-                <TextBlock TextWrapping="Wrap" Text="Действия" FontSize="20" HorizontalAlignment="Center"/>
-                <Button Content="Вооруженное &#xD;&#xA;ограбление" Height="35" Width="138" Tag="pillage"/>
-                <TextBox x:Name="PillageWeaponPriceCounter" TextWrapping="Wrap" Text="TextBox" Width="120"/>
-                <TextBox x:Name="PillagePeoplePriceCounter" TextWrapping="Wrap" Text="TextBox" Width="120"/>
-                <TextBox x:Name="PillageChanceCounter" TextWrapping="Wrap" Text="TextBox" Width="120"/>
-                <Button Content="Массовое&#xD;&#xA;убийство" Height="35" Width="138" Tag="massMurder"/>
-                <TextBox x:Name="MassMurderWeaponPriceCounter" TextWrapping="Wrap" Text="TextBox" Width="120"/>
-                <TextBox x:Name="MassMurderCarPriceCounter" TextWrapping="Wrap" Text="TextBox" Width="120"/>
-                <TextBox x:Name="MassMurderPeoplePriceCounter" TextWrapping="Wrap" Text="Tex" Width="120"/>
-                <TextBox x:Name="MassMurderChanceCounter" TextWrapping="Wrap" Text="TextBox" Width="120"/>
-                <Button Content="Взрыв&#xD;&#xA;в школе" Height="35" Width="138" Tag="explosion"/>
-                <TextBox x:Name="ExplosionWeaponPriceCounter" TextWrapping="Wrap" Text="Textox" Width="120"/>
-                <TextBox x:Name="ExplosionCarPriceCounter" TextWrapping="Wrap" Text="TextBox" Width="120"/>
-                <TextBox x:Name="ExplosionPeoplePriceCounter" TextWrapping="Wrap" Text="TextBox" Width="120"/>
-                <TextBox x:Name="ExplosionChanceCounter" TextWrapping="Wrap" Text="TextBox" Width="120"/>
-            </StackPanel>
-        </ScrollViewer>
-
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="4" Grid.ColumnSpan="5" Margin="10,10,7,10">
-            <ScrollViewer.Resources>
-                <Style TargetType="TextBox">
-                    <Setter Property="BorderThickness" Value="0"/>
-                    <Setter Property="FontSize" Value="20"/>
-                    <Setter Property="Width" Value="240"/>
-                </Style>
-            </ScrollViewer.Resources>
-
-            <StackPanel Orientation="Horizontal">
-                <TextBox x:Name="WeaponCounterTextBox" Text="Пушек: 0"/>
-                <TextBox x:Name="CarCounterTextBox" Text="Машин: 0"/>
-                <TextBox x:Name="PeopleCounterTextBox" Text="Людей: 0"/>
-            </StackPanel>
-        </ScrollViewer>
+        <TextBox x:Name="MainStatusTextBox" 
+                 Text="Статус"
+                 Grid.Column="4" Grid.Row="5"
+                 Grid.ColumnSpan="3"/>
     </Grid>
 </Window>
